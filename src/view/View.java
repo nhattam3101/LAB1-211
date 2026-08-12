@@ -9,7 +9,7 @@ public class View {
     public View() {
         menu = new Menu(
                 "Mountain Hiking Challenge Registration",
-                "Input your choice: ",
+                "Enter your choice: ",
                 "Your choice must be from 1 to 9!"
         );
 

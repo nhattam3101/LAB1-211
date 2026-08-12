@@ -1,9 +1,7 @@
-package model.business;
+package model;
 
-import model.models.StatisticalInfo;
 import java.util.HashMap;
 import java.util.List;
-import model.models.Student;
 
 public class Statistics extends HashMap<String, StatisticalInfo> {
 

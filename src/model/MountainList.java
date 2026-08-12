@@ -1,7 +1,6 @@
 
-package model.business;
+package model;
 
-import model.models.Mountain;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -18,14 +17,15 @@ public class MountainList {
     public MountainList() {
     }
 //    method 
-    public Mountain get(String mountainCode){
-        if(mountainCode.isEmpty()) return null;
-        for (Mountain mountain : mountainList) {
-            if(mountain.getMountainCode().equalsIgnoreCase(mountainCode))
-                return mountain;
-        }
-        return null;
-    }
+//    public Mountain get(String mountainCode){
+//        if(mountainCode.isEmpty()) return null;
+//        for (Mountain mountain : mountainList) {
+//            if(mountain.getMountainCode().equalsIgnoreCase(mountainCode))
+//                return mountain;
+//        }
+//        return null;
+//    }
+    // chưa dùng đến
     
     public boolean isValidMountainCode(String mCode){
         if(mCode == null || mCode.isEmpty()){
@@ -54,8 +54,7 @@ public class MountainList {
             System.out.println("Mountain file not exist");
             return;
         }
-//        list tạm để hứng trước khi trường hợp đọc lỗi sau mỗi lần cứ clear nếu để ở đầu
-        List<Mountain> tempList = new ArrayList<>(mountainList);
+        List<Mountain> tempList = new ArrayList<>();
 
         try(BufferedReader reader = 
                     new BufferedReader(new FileReader(f))){
@@ -68,13 +67,9 @@ public class MountainList {
                     firstLine = false;
                     continue;
                 }
-
                 if (text.trim().isEmpty()) continue;
-
                 tempList.add(dataToOject(text));
             }
-            
-            
             mountainList.clear();
             mountainList.addAll(tempList);
             

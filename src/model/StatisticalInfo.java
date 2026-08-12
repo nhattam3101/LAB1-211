@@ -1,4 +1,4 @@
-package model.models;
+package model;
 
 public class StatisticalInfo {
     private String mountainCode;
@@ -43,7 +43,12 @@ public class StatisticalInfo {
     
     @Override
     public String toString() {
-        return String.format("| MT0%-13s | %-22d | %,15.0f |",
-                mountainCode, numOfStudent, totalCost);
+        if(Integer.valueOf(mountainCode) < 10){
+            return String.format("| MT0%-13s | %-22d | %,15.0f |",
+                    mountainCode, numOfStudent, totalCost);
+        }else{
+            return String.format("| MT%-14s | %-22d | %,15.0f |",
+                    mountainCode, numOfStudent, totalCost);
+        }
     }
 }

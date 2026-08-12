@@ -1,4 +1,4 @@
-package model.models;
+package model;
 
 
 import java.io.Serializable;
@@ -81,7 +81,13 @@ public class Student implements Serializable{
 //    }
     @Override
     public String toString() {
-        return String.format("%-10s | %-20s | %-10s | MT0%-8s | %.0f",
+        if(Integer.valueOf(mountainCode) < 10){
+            return String.format("%-10s | %-20s | %-10s | MT0%-8s | %.0f",
                 code, name, phone, mountainCode, tutionFee);
+        }else{
+            return String.format("%-10s | %-20s | %-10s | MT%-9s | %.0f",
+                code, name, phone, mountainCode, tutionFee);
+        }
+        
     }
 }

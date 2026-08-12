@@ -1,7 +1,7 @@
 package controller;
 
-import model.business.MountainList;
-import model.business.StudentList;
+import model.MountainList;
+import model.StudentList;
 import view.View;
 
 public class Main {
@@ -53,6 +53,7 @@ public class Main {
                     break;
 
                 case 9:
+                    students.saveBeforeExit();
                     System.out.println("Goodbye!");
                     break;
             }

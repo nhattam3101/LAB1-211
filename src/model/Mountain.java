@@ -1,4 +1,4 @@
-package model.models;
+package model;
 
 public class Mountain {
     private String mountainCode;
